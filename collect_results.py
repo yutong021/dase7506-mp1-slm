@@ -26,7 +26,7 @@ def row(run):
 
 def main():
     runs = sorted(p.parent for p in Path('runs').glob('*/metrics.json'))
-    writer = csv.DictWriter(sys.stdout, FIELDS)
+    writer = csv.DictWriter(sys.stdout, FIELDS, lineterminator='\n')
     writer.writeheader()
     for run in runs:
         writer.writerow(row(run))

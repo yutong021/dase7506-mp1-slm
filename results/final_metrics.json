@@ -1,0 +1,176 @@
+{
+  "protocol": "7506-mp1-wt2-v2",
+  "implementation": "student",
+  "config": {
+    "vocab": 2048,
+    "width": 240,
+    "heads": 2,
+    "depth": 6,
+    "context": 256,
+    "pointer": true,
+    "swiglu": true,
+    "rmsnorm": true,
+    "qk_norm": true,
+    "gated_attn": true,
+    "dropout": 0.05
+  },
+  "seed": 17,
+  "ema_decay": 0.99,
+  "adamw_grouped": false,
+  "lr": 0.0012,
+  "teacher": [
+    "runs/kd_ens5_w240_do05_s40000_a07/checkpoint.pt",
+    "runs/teacher_w384_d8_h4_do20_s20000_ema099_lr1e3/checkpoint.pt",
+    "runs/teacher_w512_d8_h4_do30_s20000_ema099_lr1e3/checkpoint.pt",
+    "runs/rope_w256_d6_h2_s2400_ema099/checkpoint.pt",
+    "runs/rope_w240_d6_h2_do10_s12000_ema099_lr12e4/checkpoint.pt",
+    "runs/rope_w224_d6_gate_conv_s2400_ema099/checkpoint.pt",
+    "runs/teacher_w384_d8_h4_do20_s8000_ema099_lr1e3/checkpoint.pt",
+    "runs/rope_w240_d6_h2_do20_s30000_ema099_lr12e4/checkpoint.pt"
+  ],
+  "teacher_sha256": [
+    "e80d0fc885543eb8893e99b6403347fdf2ff50bbbcb21050dc75fea7182f6d61",
+    "ff86ef75579e47db6230b26c7bc86d9ac6119c728ae03951d23cd8033acc90a4",
+    "a475d305e2bf167fdbf6c7bba7555753d86b56ba00e5e95d8c7dce4910c212b4",
+    "72c0a31832ef40fdbfdbcff187a89cf00b33457df1e7a584bb29ca07219cad95",
+    "d0cbd2bbc1d1b3eb12d3d42dab220131e4b904f8939a7012b86ebf643656d3bd",
+    "422605402b7d54c86fc868439dbc01db228abef73518e3ba438a6c921850fb19",
+    "a77f75615e65cb4e46897f35ede87046357792df4b625155825c722302e3b5eb",
+    "42d08df3146e07b0cf659b60f22cd639ea173ba7b63a4d4b92209b55d7944a59"
+  ],
+  "teacher_weights": [
+    0.2278,
+    0.1952,
+    0.1972,
+    0.0628,
+    0.0907,
+    0.0598,
+    0.0914,
+    0.0752
+  ],
+  "folds": 0,
+  "holdout_fold": null,
+  "oof_teachers": {
+    "folds": 4,
+    "groups": [
+      {
+        "weight": 0.5397,
+        "checkpoints": [
+          "runs/oof4_T384do30_f0/checkpoint.pt",
+          "runs/oof4_T384do30_f1/checkpoint.pt",
+          "runs/oof4_T384do30_f2/checkpoint.pt",
+          "runs/oof4_T384do30_f3/checkpoint.pt"
+        ]
+      },
+      {
+        "weight": 0.4603,
+        "checkpoints": [
+          "runs/oof4_S240do10_f0/checkpoint.pt",
+          "runs/oof4_S240do10_f1/checkpoint.pt",
+          "runs/oof4_S240do10_f2/checkpoint.pt",
+          "runs/oof4_S240do10_f3/checkpoint.pt"
+        ]
+      }
+    ]
+  },
+  "oof_mix": 0.3,
+  "distill_alpha": 0.7,
+  "distill_temp": 1.0,
+  "parameters": 5121121,
+  "precision": "bf16",
+  "train_tokens": 327680000,
+  "preparation_seconds": 15.21686766896164,
+  "train_seconds": 5230.291610306944,
+  "validation": {
+    "bpb": 1.3950537630436688,
+    "token_ppl": 19.06186623371731,
+    "nll_nats": 1110097.0336486618,
+    "targets": 376599,
+    "utf8_bytes": 1148007,
+    "seconds": 0.5844504230190068
+  },
+  "validation_history": [
+    {
+      "step": 5000,
+      "bpb": 1.4393857732839317,
+      "token_ppl": 20.933724612963,
+      "nll_nats": 1145373.6906256857,
+      "targets": 376599,
+      "utf8_bytes": 1148007,
+      "seconds": 0.7569468609872274
+    },
+    {
+      "step": 10000,
+      "bpb": 1.4193087343053656,
+      "token_ppl": 20.06424828679155,
+      "nll_nats": 1129397.6314909258,
+      "targets": 376599,
+      "utf8_bytes": 1148007,
+      "seconds": 0.5946737850317731
+    },
+    {
+      "step": 15000,
+      "bpb": 1.4115203477378675,
+      "token_ppl": 19.736762363316323,
+      "nll_nats": 1123200.1177788912,
+      "targets": 376599,
+      "utf8_bytes": 1148007,
+      "seconds": 0.589642749982886
+    },
+    {
+      "step": 20000,
+      "bpb": 1.406537318387403,
+      "token_ppl": 19.53004551744816,
+      "nll_nats": 1119234.9328899118,
+      "targets": 376599,
+      "utf8_bytes": 1148007,
+      "seconds": 0.583749100973364
+    },
+    {
+      "step": 25000,
+      "bpb": 1.401859640095133,
+      "token_ppl": 19.337966475193443,
+      "nll_nats": 1115512.7273848834,
+      "targets": 376599,
+      "utf8_bytes": 1148007,
+      "seconds": 0.5909074209630489
+    },
+    {
+      "step": 30000,
+      "bpb": 1.3985413711533083,
+      "token_ppl": 19.20285519422371,
+      "nll_nats": 1112872.2553064944,
+      "targets": 376599,
+      "utf8_bytes": 1148007,
+      "seconds": 0.5461528460728005
+    },
+    {
+      "step": 35000,
+      "bpb": 1.3963946663270956,
+      "token_ppl": 19.115950269198258,
+      "nll_nats": 1111164.0410979618,
+      "targets": 376599,
+      "utf8_bytes": 1148007,
+      "seconds": 0.5867029380751774
+    },
+    {
+      "step": 40000,
+      "bpb": 1.3950640095366111,
+      "token_ppl": 19.062278935361313,
+      "nll_nats": 1110105.1871705703,
+      "targets": 376599,
+      "utf8_bytes": 1148007,
+      "seconds": 0.5832237279973924
+    }
+  ],
+  "intermediate_validation_seconds": 4.83199943008367,
+  "process_seconds": 5252.770170297008,
+  "torch_version": "2.7.1+cu128",
+  "threads": 4,
+  "checkpoint_sha256": "e1d4346b446a89cf416075c6d491de3f1b2f5f4796e563ed8458bfeb2445bf76",
+  "implementation_sha256": "7293199349a17b8ed43045df925a1d8760cee5bb443312bf4bb3cadc52138efd",
+  "device": "cuda:0",
+  "device_name": "NVIDIA GeForce RTX 5090",
+  "peak_allocated_gb": 3.772215296,
+  "peak_reserved_gb": 4.590665728
+}

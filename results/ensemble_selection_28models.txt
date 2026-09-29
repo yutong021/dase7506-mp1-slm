@@ -1,0 +1,83 @@
+single models (full validation BPB):
+  1.4064  kd_ens5_w240_do05_s40000_a07
+  1.4465  zoo_mos8_do30_s12000
+  1.4482  teacher_w384_d8_h4_do30_s12000_ema099_lr1e3
+  1.4525  rope_w240_d6_h2_do20_s30000_ema099_lr12e4
+  1.4547  teacher_w384_d8_h4_do20_s8000_ema099_lr1e3
+  1.4602  rope_w240_d6_h2_do20_s20000_ema099_lr12e4
+  1.4650  zoo_lstm_b_s40000
+  1.4656  rope_w240_d6_h2_do10_s12000_ema099_lr12e4
+  1.4660  teacher_w384_d8_h4_do40_s16000_ema099_lr1e3
+  1.4696  zoo_lstm_c_s30000
+  1.4717  teacher_w512_d8_h4_do40_s12000_ema099_lr1e3
+  1.4825  zoo_moe8_do40_s12000
+  1.4837  zoo_mos8_do40_s12000
+  1.4919  teacher_w512_d8_h4_do30_s20000_ema099_lr1e3
+  1.4926  teacher_w384_d8_h4_do20_s20000_ema099_lr1e3
+  1.4978  zoo_lstm_b_s16000
+  1.5162  zoo_lstm_d_s24000
+  1.5222  zoo_lstm_d_s40000
+  1.5228  zoo_moe8_do30_s12000
+  1.5342  rope_w256_d6_h2_s2400_ema099
+  1.5363  zoo_lstm_a_s16000
+  1.5533  rope_w224_d6_h8_s2400_ema099
+  1.5559  rope_w224_d6_gate_conv_s2400_ema099
+  1.6266  rope_w224_d6_pointer_swiglu
+  1.7180  rope_w192_d6_pointer
+  1.7604  KN5
+  1.8012  rope_w192_d6
+  2.0730  baseline
+
+EM over all 28 models: 1.3453
+  0.1543  teacher_w384_d8_h4_do20_s20000_ema099_lr1e3
+  0.1460  teacher_w512_d8_h4_do30_s20000_ema099_lr1e3
+  0.1094  zoo_lstm_c_s30000
+  0.1029  kd_ens5_w240_do05_s40000_a07
+  0.0899  zoo_mos8_do30_s12000
+  0.0786  zoo_moe8_do30_s12000
+  0.0554  zoo_lstm_b_s40000
+  0.0529  zoo_lstm_d_s40000
+  0.0415  teacher_w384_d8_h4_do20_s8000_ema099_lr1e3
+  0.0393  rope_w240_d6_h2_do10_s12000_ema099_lr12e4
+  0.0287  KN5
+  0.0267  rope_w240_d6_h2_do20_s30000_ema099_lr12e4
+  0.0227  zoo_lstm_d_s24000
+  0.0136  rope_w256_d6_h2_s2400_ema099
+  0.0104  teacher_w384_d8_h4_do30_s12000_ema099_lr1e3
+  0.0099  zoo_mos8_do40_s12000
+  0.0067  rope_w224_d6_gate_conv_s2400_ema099
+  0.0027  zoo_moe8_do40_s12000
+  0.0025  rope_w240_d6_h2_do20_s20000_ema099_lr12e4
+  0.0025  rope_w192_d6_pointer
+  0.0021  rope_w224_d6_h8_s2400_ema099
+  0.0007  rope_w224_d6_pointer_swiglu
+  0.0003  zoo_lstm_b_s16000
+  0.0000  zoo_lstm_a_s16000
+  0.0000  teacher_w512_d8_h4_do40_s12000_ema099_lr1e3
+  0.0000  rope_w192_d6
+  0.0000  teacher_w384_d8_h4_do40_s16000_ema099_lr1e3
+  0.0000  baseline
+
+greedy selection, fit A, evaluate B:
+  K= 1 fit 1.3769 held-out 1.4359  +kd_ens5_w240_do05_s40000_a07
+  K= 2 fit 1.3521 held-out 1.4130  +teacher_w384_d8_h4_do20_s20000_ema099_lr1e3
+  K= 3 fit 1.3360 held-out 1.3958  +zoo_lstm_c_s30000
+  K= 4 fit 1.3285 held-out 1.3892  +teacher_w512_d8_h4_do30_s20000_ema099_lr1e3
+  K= 5 fit 1.3241 held-out 1.3838  +zoo_mos8_do30_s12000
+  K= 6 fit 1.3216 held-out 1.3803  +KN5
+  K= 7 fit 1.3198 held-out 1.3787  +zoo_moe8_do30_s12000
+  K= 8 fit 1.3182 held-out 1.3773  +zoo_lstm_d_s40000
+  K= 9 fit 1.3173 held-out 1.3764  +zoo_lstm_b_s40000
+  K=10 fit 1.3169 held-out 1.3757  +rope_w240_d6_h2_do10_s12000_ema099_lr12e4
+
+greedy selection, fit B, evaluate A:
+  K= 1 fit 1.4359 held-out 1.3769  +kd_ens5_w240_do05_s40000_a07
+  K= 2 fit 1.4111 held-out 1.3526  +zoo_lstm_c_s30000
+  K= 3 fit 1.3957 held-out 1.3360  +teacher_w384_d8_h4_do20_s20000_ema099_lr1e3
+  K= 4 fit 1.3891 held-out 1.3286  +teacher_w512_d8_h4_do30_s20000_ema099_lr1e3
+  K= 5 fit 1.3837 held-out 1.3242  +zoo_mos8_do30_s12000
+  K= 6 fit 1.3801 held-out 1.3218  +KN5
+  K= 7 fit 1.3785 held-out 1.3200  +zoo_moe8_do30_s12000
+  K= 8 fit 1.3771 held-out 1.3185  +zoo_lstm_b_s40000
+  K= 9 fit 1.3762 held-out 1.3175  +zoo_lstm_d_s40000
+  K=10 fit 1.3755 held-out 1.3171  +rope_w240_d6_h2_do10_s12000_ema099_lr12e4
