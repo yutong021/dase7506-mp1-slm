@@ -1,0 +1,14 @@
+{
+  "arch": "lstm",
+  "vocab": 2048,
+  "context": 256,
+  "width": 400,
+  "hidden": 1150,
+  "depth": 3,
+  "pointer": true,
+  "dropout": 0.3,
+  "dropouti": 0.3,
+  "dropouth": 0.2,
+  "dropoute": 0.05,
+  "wdrop": 0.3
+}

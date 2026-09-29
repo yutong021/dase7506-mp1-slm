@@ -1,0 +1,15 @@
+{
+  "arch": "mos",
+  "vocab": 2048,
+  "width": 384,
+  "heads": 4,
+  "depth": 8,
+  "context": 256,
+  "pointer": true,
+  "swiglu": true,
+  "rmsnorm": true,
+  "qk_norm": true,
+  "gated_attn": true,
+  "mos": 8,
+  "dropout": 0.4
+}

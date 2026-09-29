@@ -1,0 +1,4 @@
+{"folds": 4, "groups": [
+  {"weight": 0.5397, "checkpoints": ["runs/oof4_T384do30_f0/checkpoint.pt", "runs/oof4_T384do30_f1/checkpoint.pt", "runs/oof4_T384do30_f2/checkpoint.pt", "runs/oof4_T384do30_f3/checkpoint.pt"]},
+  {"weight": 0.4603, "checkpoints": ["runs/oof4_S240do10_f0/checkpoint.pt", "runs/oof4_S240do10_f1/checkpoint.pt", "runs/oof4_S240do10_f2/checkpoint.pt", "runs/oof4_S240do10_f3/checkpoint.pt"]}
+]}

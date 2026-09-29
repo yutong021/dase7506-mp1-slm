@@ -1,0 +1,13 @@
+{
+  "vocab": 2048,
+  "width": 512,
+  "heads": 4,
+  "depth": 8,
+  "context": 256,
+  "pointer": true,
+  "swiglu": true,
+  "rmsnorm": true,
+  "qk_norm": true,
+  "gated_attn": true,
+  "dropout": 0.4
+}

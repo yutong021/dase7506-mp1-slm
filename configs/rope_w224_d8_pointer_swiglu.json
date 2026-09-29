@@ -1,0 +1,9 @@
+{
+  "vocab": 2048,
+  "width": 224,
+  "heads": 4,
+  "depth": 8,
+  "context": 256,
+  "pointer": true,
+  "swiglu": true
+}
