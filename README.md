@@ -149,7 +149,7 @@ checkpoint 的 sha256 是 `e1d4346b446a89cf416075c6d491de3f1b2f5f4796e563ed8458b
 
 ## 未包含的内容
 
-- **checkpoint**（全部约 3.3 GB，最终模型 20 MB）不在仓库里，保存在训练集群的 `runs/kd_hyb_ens8w_oof4_do05_s40000_a07_m03/checkpoint.pt`。
+- 训练过程中的全部 checkpoint（约 3.3 GB）不在仓库里。打分用的最终模型在仓库根目录的 `checkpoint.pt`（20 MB，sha256 `e1d4346b446a89cf416075c6d491de3f1b2f5f4796e563ed8458bfeb2445bf76`）。不重新训练的评测命令是 `python evaluate.py --checkpoint checkpoint.pt --device cpu --precision fp32 --threads 4 --split test`。
 - 课程的数据、作业说明和 starter README。
 
 ## AI 使用披露
